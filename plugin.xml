@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" id="cordova-plugin-ocr-sdk" version="1.0.0">
+    <name>OCR SDK</name>
+    <engines>
+        <engine name="cordova" version=">=3.4.0" />
+    </engines>
+    <dependency id="cordova-plugin-file" version="^4.3.3" />
+    <js-module src="www/ocrimpl.js" name="ocrimpl">
+        <clobbers target="ocrimpl" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="OCRImpl">
+                <param name="android-package" value="com.tv.plugin.OCRImpl" />
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+        
+        <source-file src="src/android/OCRImpl.java" target-dir="src/com/tv/plugin/" />
+        <source-file src="src/android/ocrsdk/BarcodeSettings.java" target-dir="src/com/tv/plugin/ocrsdk/" />
+        <source-file src="src/android/ocrsdk/Base64.java" target-dir="src/com/tv/plugin/ocrsdk/" />
+        <source-file src="src/android/ocrsdk/BusCardSettings.java" target-dir="src/com/tv/plugin/ocrsdk/" />
+        <source-file src="src/android/ocrsdk/Client.java" target-dir="src/com/tv/plugin/ocrsdk/" />
+        <source-file src="src/android/ocrsdk/ProcessingSettings.java" target-dir="src/com/tv/plugin/ocrsdk/" />
+        <source-file src="src/android/ocrsdk/ReceiptSettings.java" target-dir="src/com/tv/plugin/ocrsdk/" />
+        <source-file src="src/android/ocrsdk/Task.java" target-dir="src/com/tv/plugin/ocrsdk/" />
+        <source-file src="src/android/ocrsdk/TextFieldSettings.java" target-dir="src/com/tv/plugin/ocrsdk/" />
+    </platform>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="OCRImpl">
+                <param name="ios-package" value="OCRImpl" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/OCRImpl.h" />
+        <source-file src="src/ios/OCRImpl.m" />
+
+        <header-file src="src/ios/Reachability.h" />
+        <source-file src="src/ios/Reachability.m" />
+
+        <header-file src="src/ios/ocrsdk/Client.h" />
+        <source-file src="src/ios/ocrsdk/Client.m" />
+
+        <header-file src="src/ios/ocrsdk/HTTPOperation.h" />
+        <source-file src="src/ios/ocrsdk/HTTPOperation.m" />
+
+        <header-file src="src/ios/ocrsdk/ProcessingOperation.h" />
+        <source-file src="src/ios/ocrsdk/ProcessingOperation.m" />
+
+        <header-file src="src/ios/ocrsdk/ProcessingParams.h" />
+        <source-file src="src/ios/ocrsdk/ProcessingParams.m" />
+
+        <header-file src="src/ios/ocrsdk/Task.h" />
+        <source-file src="src/ios/ocrsdk/Task.m" />
+
+        <header-file src="src/ios/ocrsdk/Base64/NSData+Base64.h" />
+        <source-file src="src/ios/ocrsdk/Base64/NSData+Base64.m" />
+
+        <header-file src="src/ios/ocrsdk/Base64/NSString+Base64.h" />
+        <source-file src="src/ios/ocrsdk/Base64/NSString+Base64.m" />
+
+
+    </platform>
+</plugin>
