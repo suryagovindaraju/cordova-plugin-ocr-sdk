@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" id="cordova-plugin-ocr-sdk" version="1.0.0">
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" id="cordova-plugin-ocr-sdk" version="1.0.1">
     <name>OCR SDK</name>
     <engines>
         <engine name="cordova" version=">=3.4.0" />
     </engines>
     <dependency id="cordova-plugin-file" version="^4.3.3" />
     <js-module src="www/ocrimpl.js" name="ocrimpl">
-        <clobbers target="ocrimpl" />
+        <clobbers target="navigator.ocrimpl" />
     </js-module>
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">

@@ -1,6 +1,6 @@
 {
     "name": "cordova-plugin-ocr-sdk",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "cordova-plugin-ocr-sdk",
     "cordova": {
         "id": "cordova-plugin-ocr-sdk",
@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/surya/cordova-plugin-ocr-sdk"
+        "url": "https://github.com/suryagovindaraju/cordova-plugin-ocr-sdk"
     },
     "keywords": [
         "ecosystem:cordova",
@@ -24,5 +24,6 @@
         "xcode": "0.9.1"
     },
     "author": "govindharaju.adabala@techvedika.com",
+    "types": "./types/index.d.ts",
     "license": "ISC"
 }
